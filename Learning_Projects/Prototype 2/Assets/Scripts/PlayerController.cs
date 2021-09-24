@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+        
         var transformLocal = transform;
         if (transform.position.x < -xRange)
             transformLocal.position = new Vector3(-xRange, transform.position.y, transformLocal.position.z);
