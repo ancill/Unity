@@ -8,6 +8,14 @@ public class SpawnManager : MonoBehaviour
   private float spawnRangeX = 20;
   private float spawnPosZ = 20;
 
+  private float startDelay = 20;
+  private float spawnInterval = 1.5f;
+
+  void Start()
+  {
+    InvokeRepeating("SpawnRandomAnimal", startDelay, spawnInterval);
+  }
+
   void Update()
   {
     if (Input.GetKeyDown(KeyCode.S))
