@@ -8,6 +8,10 @@ public class DestroyOutOfBounds : MonoBehaviour
     void Update()
     {
         if(transform.position.z > topBound) Destroy(gameObject);
-        else if(transform.position.z < lowBound) Destroy(gameObject);
+        else if (transform.position.z < lowBound)
+        {
+            Debug.Log("Game over");
+            Destroy(gameObject);
+        }
     }
 }
