@@ -11,11 +11,12 @@ public class SpawnManagerX : MonoBehaviour
     private float spawnPosY = 30;
 
     private float startDelay = 1.0f;
-    private float spawnInterval = 4.0f;
+   
 
     // Start is called before the first frame update
     void Start()
     {
+        var spawnInterval = Random.Range(1.0f, 3.0f);
         InvokeRepeating("SpawnRandomBall", startDelay, spawnInterval);
     }
 
@@ -24,9 +25,9 @@ public class SpawnManagerX : MonoBehaviour
     {
         // Generate random ball index and random spawn position
         Vector3 spawnPos = new Vector3(Random.Range(spawnLimitXLeft, spawnLimitXRight), spawnPosY, 0);
-
+        int randBall = Random.Range(0, ballPrefabs.Length);
         // instantiate ball at random spawn location
-        Instantiate(ballPrefabs[0], spawnPos, ballPrefabs[0].transform.rotation);
+        Instantiate(ballPrefabs[randBall], spawnPos, ballPrefabs[randBall].transform.rotation);
     }
 
 }
